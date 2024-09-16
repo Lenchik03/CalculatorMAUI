@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Calculator.MainPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackLayout Orientation="Vertical" Grid.ColumnSpan="5" Grid.Row="0">
+            <Label x:Name="history" HeightRequest="70"  HorizontalTextAlignment="End"    Background="#A3BBD0"/>
+            <Label x:Name="input" HeightRequest="70" FontSize="Large" HorizontalTextAlignment="End"  Grid.ColumnSpan="5" Grid.Row="0"  Background="#A3BBD0"/>
+        </StackLayout>
+       
+        <Button Grid.Row="1" Text="&#129044;" Background="#D0F5BE" Clicked="ClickBackspace"/>
+        <Button Grid.Row="1" Grid.Column="1" Text="CE" Background="#D0F5BE" Clicked="ClickCE"/>
+        <Button Grid.Row="1" Grid.Column="2" Text="C" Background="#D0F5BE" Clicked="ClickC"/>
+        <Button Grid.Row="1" Grid.Column="3" Text="&#177;" Background="#D0F5BE" Clicked="ClickPlusMinus"/>
+        <Button Grid.Row="1" Grid.Column="4" Text="&#x221A;" Background="#D0F5BE" Clicked="ClckSquareRoot"/>
+        <Button Grid.Row="2" Grid.Column="0" Text="7" Background="#D88EB7" Clicked="ClickNumber"/>
+        <Button Grid.Row="2" Grid.Column="1" Text="8" Background="#D88EB7" Clicked="ClickNumber"/>
+        <Button Grid.Row="2" Grid.Column="2" Text="9" Background="#D88EB7" Clicked="ClickNumber"/>
+        <Button Grid.Row="2" Grid.Column="3" Text="/" Background="#D88EB7" Clicked="ClickOperation"/>
+        <Button Grid.Row="2" Grid.Column="4" Text="%" Background="#D88EB7" Clicked="ClickPersent"/>
+        <Button Grid.Row="3" Grid.Column="0" Text="4" Background="#FFF5AD" Clicked="ClickNumber"/>
+        <Button Grid.Row="3" Grid.Column="1" Text="5" Background="#FFF5AD" Clicked="ClickNumber"/>
+        <Button Grid.Row="3" Grid.Column="2" Text="6" Background="#FFF5AD" Clicked="ClickNumber"/>
+        <Button Grid.Row="3" Grid.Column="3" Text="*" Background="#FFF5AD" Clicked="ClickOperation"/>
+        <Button Grid.Row="3" Grid.Column="4" Text="1/x" Background="#FFF5AD" Clicked="ClickDivideX"/>
+        <Button Grid.Row="4" Grid.Column="0" Text="1" Background="#65A1B7" Clicked="ClickNumber"/>
+        <Button Grid.Row="4" Grid.Column="1" Text="2" Background="#65A1B7" Clicked="ClickNumber"/>
+        <Button Grid.Row="4" Grid.Column="2" Text="3" Background="#65A1B7" Clicked="ClickNumber"/>
+        <Button Grid.Row="4" Grid.Column="3" Text="-" Background="#65A1B7" Clicked="ClickOperation"/>
+        <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Text="0" Background="#C5E805" Clicked="ClickNumber"/>
+        <Button Grid.Row="5" Grid.Column="2" Text="," Background="#C5E805" Clicked="ClickDot"/>
+        <Button Grid.Row="5" Grid.Column="3" Text="+" Background="#C5E805" Clicked="ClickOperation"/>
+        <Button Grid.Row="4" Grid.Column="4" Grid.RowSpan="3" Text="=" Background="#9890A8" Clicked="ClickResult"/>
+        <Button Grid.Row="7" Grid.Column="0" Text="x^2" Background="#9890F6" Clicked="ClickSquare"/>
+        <Button Grid.Row="7" Grid.Column="1" Text="sin" Background="#9890F6" Clicked="ClickSin"/>
+        <Button Grid.Row="7" Grid.Column="2" Text="log" Background="#9890F6" Clicked="ClickLog"/>
+        <Button Grid.Row="7" Grid.Column="3" Text="10^x" Background="#9890F6" Clicked="ClickSquareX"/>
+
+
+
+
+    </Grid>
+
+</ContentPage>
