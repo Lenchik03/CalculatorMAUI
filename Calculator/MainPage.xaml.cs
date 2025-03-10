@@ -41,6 +41,7 @@
                 {
                     ClickResult(null, new EventArgs());
                 }
+
                 History(operation1);
                 isOperation = true;
                IsEmpty = true;
