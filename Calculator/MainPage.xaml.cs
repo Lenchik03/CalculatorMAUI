@@ -12,6 +12,7 @@
             InitializeComponent();
         }
 
+
         public void History(char operation)
         {
             if(isOperation)
@@ -24,11 +25,11 @@
                 history.Text = historyText;
         }
 
+        // метод опрределяет какая операция была выбрана и выызывает метод ClickResult() для вычичления
         private void ClickOperation(object sender, EventArgs e)
         {
             Button button = (Button)sender;
             var operation1 = button.Text.ToString()[0];
-            //промежуточный результат выводить, при нажатии на любую цифру убирать
             if (!isOperation)
             {
                 if (count < 1)
@@ -49,6 +50,8 @@
             operation = operation1;
         }
         double result = 0;
+
+        //метод для вычисления результата
         private void ClickResult(object sender, EventArgs e)
         {
             result = 0;
@@ -73,6 +76,7 @@
             
         }
 
+        //метод для стирания одной цифры числа
         private void ClickBackspace(object sender, EventArgs e)
         {
             if (input.Text != null && input.Text.Length > 0)
@@ -81,6 +85,7 @@
             }
         }
 
+        // метод для стирания всего
         private void ClickC(object sender, EventArgs e)
         {
             operation = ' ';
@@ -89,6 +94,8 @@
             history.Text = null;
             historyText = null;
         }
+
+        // метод для стирания введенного числа
         private void ClickCE(object sender, EventArgs e)
         {
             operation = ' ';
@@ -104,12 +111,14 @@
                 input.Text = "-" + input.Text;
         }
 
+        // модуль числа
         private void ClckSquareRoot(object sender, EventArgs e)
         {
             double.TryParse(input.Text, out double y);
             input.Text = (Math.Sqrt(y)).ToString();
         }
 
+        // для введения числа в строку ввода
         private void ClickNumber(object sender, EventArgs e)
         {
             isOperation = false;
@@ -124,21 +133,22 @@
 
         double x = 0;
         char operation = ' ';
-       
 
+        // кнопка %
         private void ClickPersent(object sender, EventArgs e)
         {
             double percent1 = x / 100;
             double.TryParse(input.Text, out double y);
             input.Text = (y * percent1).ToString();
         }
-
+        // кнопка 1/x (дробь)
         private void ClickDivideX(object sender, EventArgs e)
         {
             double.TryParse(input.Text, out double y);
             input.Text = (1 / y).ToString();
         }
 
+        // запятая для десятичной дроби
         private void ClickDot(object sender, EventArgs e)
         {
             if (!isOperation)
@@ -149,42 +159,33 @@
         }
 
        
-
+        // корень
         private void ClickSquare(object sender, EventArgs e)
         {
             double.TryParse(input.Text, out double y);
             input.Text = (Math.Pow(y, 2)).ToString();
         }
 
+        // синус
         private void ClickSin(object sender, EventArgs e)
         {
             double.TryParse(input.Text, out double y);
             input.Text = (Math.Sin(y)).ToString();
         }
 
+        // логарифм
         private void ClickLog(object sender, EventArgs e)
         {
             double.TryParse(input.Text, out double y);
             input.Text = (Math.Log(y)).ToString();
         }
 
+        //степень
         private void ClickSquareX(object sender, EventArgs e)
         {
             double.TryParse(input.Text, out double y);
             input.Text = (Math.Pow(10, y)).ToString();
         }
-
-        //private void OnCounterClicked(object sender, EventArgs e)
-        //{
-        //    count++;
-
-        //    if (count == 1)
-        //        CounterBtn.Text = $"Clicked {count} time";
-        //    else
-        //        CounterBtn.Text = $"Clicked {count} times";
-
-        //    SemanticScreenReader.Announce(CounterBtn.Text);
-        //}
     }
 
 }
