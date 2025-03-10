@@ -12,7 +12,7 @@
             InitializeComponent();
         }
 
-
+        // вывод истории нажатий в строку
         public void History(char operation)
         {
             if(isOperation)
@@ -76,6 +76,18 @@
             input.Text = result.ToString();
             
         }
+        // для введения числа в строку ввода
+        private void ClickNumber(object sender, EventArgs e)
+        {
+            isOperation = false;
+            if (IsEmpty)
+            {
+                input.Text = "";
+                IsEmpty = false;
+            }
+            Button button = (Button)sender;
+            input.Text += button.Text.ToString();
+        }
 
         //метод для стирания одной цифры числа
         private void ClickBackspace(object sender, EventArgs e)
@@ -119,18 +131,7 @@
             input.Text = (Math.Sqrt(y)).ToString();
         }
 
-        // для введения числа в строку ввода
-        private void ClickNumber(object sender, EventArgs e)
-        {
-            isOperation = false;
-            if (IsEmpty)
-            {
-                input.Text = "";
-                IsEmpty = false;
-            }
-                Button button = (Button)sender;
-                input.Text += button.Text.ToString();
-        }
+        
 
         double x = 0;
         char operation = ' ';
