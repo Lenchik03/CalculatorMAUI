@@ -4,9 +4,8 @@
     {
         int count = 0;
         public string historyText;
-        public bool isOperation = false;
-        public bool isRavno = false;
-        public bool IsEmpty=true;
+        public bool isOperation = false; // операция уже нажата или нет
+        public bool IsEmpty=true; // пусто или не пусто в строке ввода
         public MainPage()
         {
             InitializeComponent();
@@ -18,7 +17,7 @@
             if(isOperation)
             {
                 historyText = historyText.Remove(historyText.Length - 1, 1);
-                historyText += operation;
+                historyText = historyText + operation;
                 history.Text = historyText;
             }
             else
@@ -29,7 +28,7 @@
         private void ClickOperation(object sender, EventArgs e)
         {
             Button button = (Button)sender;
-            var operation1 = button.Text.ToString()[0];
+            char operation1 = button.Text.ToString()[0];
             if (!isOperation)
             {
                 if (count < 1)
@@ -44,7 +43,7 @@
 
                 History(operation1);
                 isOperation = true;
-               IsEmpty = true;
+                IsEmpty = true;
             }
             else
                 History(operation1);
@@ -116,6 +115,8 @@
             input.Text = null;
             historyText = null;
         }
+
+        // модуль числа
         private void ClickPlusMinus(object sender, EventArgs e)
         {
             if (input.Text.StartsWith("-"))
@@ -124,7 +125,7 @@
                 input.Text = "-" + input.Text;
         }
 
-        // модуль числа
+        // квадратный корень
         private void ClckSquareRoot(object sender, EventArgs e)
         {
             double.TryParse(input.Text, out double y);
@@ -161,7 +162,7 @@
         }
 
        
-        // корень
+        // степень
         private void ClickSquare(object sender, EventArgs e)
         {
             double.TryParse(input.Text, out double y);
